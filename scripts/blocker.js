@@ -16,6 +16,14 @@
                 throw 'Instance should not be start()\'ed twice.';
             }
             this._started = true;
+            this.removeImages();
+        },
+        removeImages: function() {
+           var images = document.getElementsByTagName("img");
+           var l = images.length;
+           for (var i = 0; i < l; i++) {
+               images[0].parentNode.removeChild(images[0]);
+           }           
         },
 
         /**
