@@ -8,15 +8,13 @@
     "type": "certified",
     "content_scripts": [
         {
-            "matches": ["https://*/*", "http://*/*"],
+            "matches": ["<all_urls>"],
             "js": [
                 "scripts/blocker.js"
-            ],
-            "run_at": "document_start",
-            "all_frames": false
+            ]
         }
     ],
-    "permissions": ["http://*/*", "https://*/*"],
+    "permissions": ["<all_urls>"],
     "icons": {
         "512": "/style/icons/512.png",
         "256": "/style/icons/256.png",

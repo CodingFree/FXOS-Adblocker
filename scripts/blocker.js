@@ -1,9 +1,7 @@
 (function () {
 
     function uploader() {
-        console.log("FXOS-Adblocker created!");
         this._started = false;
-        window.alert("Test");
         uploader.prototype.start();
 
     }
@@ -13,7 +11,7 @@
          * @memberof Screenshot.prototype
          */
         start: function () {
-            console.log("FXOS-Adblocker Running");
+            console.log("FXOS-Adblocker Running at: "+window.location);
             if (this._started) {
                 throw 'Instance should not be start()\'ed twice.';
             }
@@ -25,11 +23,14 @@
          * @memberof Screenshot.prototype
          */
         stop: function () {
+            console.log("FXOS-Adblocker Stopped at: "+window.location);
             if (!this._started) {
                 throw 'FXOS-Adblocker was never start()\'ed but stop() is called.';
             }
             this._started = false;
         }
 
+    }
+    
     var uploader = new uploader();
 }());
